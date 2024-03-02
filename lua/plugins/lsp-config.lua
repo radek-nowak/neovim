@@ -11,6 +11,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls", "gopls", "jdtls" },
+        ensure_installed = { "lua_ls", "gopls" },
       })
     end,
   },
@@ -18,7 +19,6 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      require('java').setup()
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
       lspconfig.gopls.setup({})
@@ -32,4 +32,6 @@ return {
       end)
     end,
   },
+  enabled = false
 }
+
