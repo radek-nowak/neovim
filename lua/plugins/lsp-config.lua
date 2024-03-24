@@ -19,9 +19,10 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
-			lspconfig.gopls.setup({})
+			lspconfig.lua_ls.setup({ capabilities = capabilities })
+			lspconfig.gopls.setup({ capabilities = capabilities })
 			vim.keymap.set("n", "<space>qe", vim.diagnostic.open_float)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
