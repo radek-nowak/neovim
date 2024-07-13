@@ -26,16 +26,16 @@ return {
                 section_separators = { left = "", right = "" },
             },
 
-            tabline = {
-                lualine_a = { Harpoon_files },
-                lualine_x = {
-                    {
-                        "datetime",
-                        -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
-                        style = "default",
-                    },
-                },
-            },
+            -- tabline = {
+            --     lualine_a = { Harpoon_files },
+            --     lualine_x = {
+            --         {
+            --             "datetime",
+            --             -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+            --             style = "default",
+            --         },
+            --     },
+            -- },
         })
     end,
 }
