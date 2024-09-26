@@ -55,6 +55,8 @@
 -- end
 --
 -- return M
+--
+--
 return {
   -- Autocompletion
   "hrsh7th/nvim-cmp",

@@ -21,8 +21,10 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.gopls.setup({ capabilities = capabilities })
+			-- lspconfig.lua_ls.setup({ capabilities = capabilities })
+			lspconfig.gopls.setup({ capabilities = capabilities, hint = { enable = true } })
+			-- lspconfig.gopls.setup({})
+
 			vim.keymap.set("n", "<space>qe", vim.diagnostic.open_float)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
