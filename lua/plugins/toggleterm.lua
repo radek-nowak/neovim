@@ -7,10 +7,10 @@ return {
       open_mapping = [[<c-t>]],
       shade_filetypes = {},
       shade_terminals = true,
-      shading_factor = 2,
+      -- shading_factor = 2,
       start_in_insert = true,
       persist_size = false,
-      direction = "float",
+      -- direction = "float",
       close_on_exit = true,
       shell = vim.o.shell,
       float_opts = {

@@ -1,3 +1,4 @@
+-- return{}
 return {
         -- Autocompletion
         "hrsh7th/nvim-cmp",
@@ -69,7 +70,7 @@ return {
                                 ["<C-Space>"] = cmp.mapping.complete({}),
                                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                                 ["<CR>"] = cmp.mapping.confirm({
-                                        behavior = cmp.ConfirmBehavior.Replace,
+                                        behavior = cmp.ConfirmBehavior.Adds,
                                         select = true,
                                 }),
                                 -- ["<TAB>"] = cmp.mapping.confirm({
@@ -77,9 +78,9 @@ return {
                                 --         select = true,
                                 -- }),
                                 ["<Tab>"] = cmp.mapping(function(fallback)
-                                        if cmp.visible() then
-                                                cmp.select_next_item()
-                                        elseif luasnip.expand_or_locally_jumpable() then
+                                        -- if cmp.visible() then
+                                                -- cmp.select_next_item()
+                                        if luasnip.expand_or_locally_jumpable() then
                                                 luasnip.expand_or_jump()
                                         else
                                                 fallback()
@@ -123,9 +124,9 @@ return {
                                                         vim_item.kind)
                                                 -- Source
                                                 vim_item.menu = ({
+                                                        nvim_lsp = "[LSP]",
                                                         luasnip = "[LuaSnip]",
                                                         buffer = "[Buffer]",
-                                                        nvim_lsp = "[LSP]",
                                                         nvim_lua = "[Lua]",
                                                         copilot = "[Copilot]",
                                                         latex_symbols = "[LaTeX]",
